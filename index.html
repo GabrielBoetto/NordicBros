@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hidratación Premium</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>hola mundo 2</h1>
+    <header>
+        <nav>
+            <img src="logo.png" alt="Logo de la Marca" class="logo">
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Hidratación Premium</h1>
+            <p>Encuentra los mejores bidones para mantenerte hidratado todo el día.</p>
+        </div>
+    </header>
+
+    <section id="productos" class="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="grid">
+            <div class="producto">
+                <img src="producto1.png" alt="Bidón 1">
+                <h3>Bidón 1L</h3>
+                <p>Precio: $10</p>
+                <input type="number" id="producto1" value="0" min="0">
+            </div>
+            <div class="producto">
+                <img src="producto2.png" alt="Bidón 2">
+                <h3>Bidón 2L</h3>
+                <p>Precio: $15</p>
+                <input type="number" id="producto2" value="0" min="0">
+            </div>
+            <div class="producto">
+                <img src="producto3.png" alt="Bidón 3">
+                <h3>Bidón 5L</h3>
+                <p>Precio: $20</p>
+                <input type="number" id="producto3" value="0" min="0">
+            </div>
+        </div>
+        <button onclick="calcularTotal()">Calcular Total</button>
+        <p id="total"></p>
+    </section>
+
+    <footer id="contacto">
+        <p>© 2024 Hidratación Premium. Todos los derechos reservados.</p>
+        <p><a href="mailto:contacto@hidratacionpremium.com">Contacto</a></p>
+    </footer>
+
+    <script src="./js/index.js"></script>
 </body>
 </html>
