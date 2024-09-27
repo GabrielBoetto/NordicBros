@@ -7,9 +7,9 @@ body {
 }
 
 header {
-    background-color: #0d47a1;
+    background-color: #8cb4bf;
     color: white;
-    padding: 50px 20px;
+    padding: 20px 20px;
     text-align: center;
     position: relative;
 }
@@ -19,6 +19,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    height: 70px;
 }
 
 nav ul {
@@ -40,7 +41,7 @@ nav ul li a {
 }
 
 nav .logo {
-    width: 120px;
+    width: 125px;
 }
 
 .hero {
@@ -66,7 +67,7 @@ nav .logo {
 .productos h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #0d47a1;
+    color: #8cb4bf;
 }
 
 .grid {
@@ -89,15 +90,15 @@ nav .logo {
 
 .producto img {
     width: 100%;
-    height: auto;
-    border-bottom: 2px solid #0d47a1;
+    height: 70%;
+    border-bottom: 2px solid #8cb4bf;
     padding-bottom: 10px;
 }
 
 .producto h3 {
     font-size: 1.5rem;
     margin: 15px 0;
-    color: #0d47a1;
+    color: #8cb4bf;
 }
 
 .producto p {
@@ -116,7 +117,7 @@ input[type="number"] {
 
 button {
     padding: 15px 30px;
-    background-color: #0d47a1;
+    background-color: #8cb4bf;
     color: white;
     font-size: 1.2rem;
     border: none;
@@ -127,11 +128,11 @@ button {
 }
 
 button:hover {
-    background-color: #1565c0;
+    background-color: #8cb4bf;
 }
 
 footer {
-    background-color: #0d47a1;
+    background-color: #8cb4bf;
     color: white;
     padding: 20px;
     text-align: center;

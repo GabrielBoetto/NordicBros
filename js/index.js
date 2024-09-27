@@ -16,7 +16,7 @@ function calcularTotal() {
     total += cantidadProducto3 * precioProducto3;
 
     // Algoritmo condicional: aplicar descuento si el total supera $50000
-    if (total > 50) {
+    if (total > 50000) {
         total *= 0.9;  // 10% de descuento
     }
 
