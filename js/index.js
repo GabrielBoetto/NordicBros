@@ -30,5 +30,5 @@ function calcularTotal() {
     }
 
     // Mostrar el total
-    document.getElementById('total').textContent = `Total: $${total.toFixed(2)} (Tipos de Bidónes: ${puntos})`;
+    document.getElementById('total').textContent = `Total: $${total.toFixed(2)} (Colores de Bidónes: ${puntos})`;
 }
