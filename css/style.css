@@ -42,6 +42,7 @@ nav ul li a {
 
 nav .logo {
     width: 125px;
+    justify-content: center !important;
 }
 
 .hero {
