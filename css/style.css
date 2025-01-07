@@ -30,6 +30,7 @@ header {
     height: auto;     
     display: block;   
     margin: 0 auto;  
+    align-items: baseline;
 }
 
 
@@ -169,7 +170,7 @@ footer {
 }
 
 footer a {
-    color: var(--hover-color);
+    color: aquamarine;
     text-decoration: none;
     font-weight: bold;
     transition: text-decoration 0.3s;
