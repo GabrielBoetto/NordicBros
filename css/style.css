@@ -9,29 +9,21 @@ body {
 header {
     background-color: #8cb4bf;
     color: white;
-    padding: 20px 20px;
+    padding: 20px;
     text-align: center;
-    position: relative;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    height: 70px;
+    padding: 10px 20px;
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline;
+    gap: 15px;
 }
 
 nav ul li a {
@@ -40,112 +32,45 @@ nav ul li a {
     font-weight: bold;
 }
 
-nav .logo {
-    width: 125px;
-    justify-content: center !important;
-}
-
 .hero {
     margin-top: 50px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: #f0f0f0;
+    font-size: 2.5rem;
 }
 
 .productos {
-    padding: 50px 20px;
-    background-color: #ffffff;
+    padding: 40px 20px;
     text-align: center;
 }
 
 .productos h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
     color: #8cb4bf;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .producto {
-    background-color: #fff;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 20px;
-    transition: transform 0.3s;
-}
-
-.producto:hover {
-    transform: scale(1.05);
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
 }
 
 .producto img {
     width: 100%;
-    height: 70%;
-    border-bottom: 2px solid #8cb4bf;
-    padding-bottom: 10px;
-}
-
-.producto h3 {
-    font-size: 1.5rem;
-    margin: 15px 0;
-    color: #8cb4bf;
-}
-
-.producto p {
-    font-size: 1.2rem;
-    color: #333;
-}
-
-input[type="number"] {
-    padding: 10px;
-    margin-top: 10px;
-    width: 60px;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid #ccc;
 }
 
 button {
-    padding: 15px 30px;
-    background-color: #8cb4bf;
+    background: #8cb4bf;
     color: white;
-    font-size: 1.2rem;
     border: none;
-    border-radius: 8px;
-    margin-top: 20px;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #8cb4bf;
-}
-
-footer {
-    background-color: #8cb4bf;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 50px;
-}
-
-footer a {
-    color: #bbdefb;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
