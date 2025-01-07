@@ -24,6 +24,15 @@ header {
     position: relative;
 }
 
+
+.logo {
+    max-width: 150px; 
+    height: auto;     
+    display: block;   
+    margin: 0 auto;  
+}
+
+
 nav {
     display: flex;
     justify-content: space-between;
