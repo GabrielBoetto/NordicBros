@@ -1,46 +1,27 @@
-/* Fuentes y colores */
-:root {
-    --primary-color: #8cb4bf;
-    --secondary-color: #f0f4f8;
-    --text-color: #333;
-    --white-color: #ffffff;
-    --hover-color: #72a4ae;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    line-height: 1.6;
+    background-color: #f0f4f8;
 }
 
 header {
-    background: var(--primary-color);
-    color: var(--white-color);
-    padding: 20px;
+    background-color: #8cb4bf;
+    color: white;
+    padding: 20px 20px;
     text-align: center;
-    position: relative;
 }
-
-
-.logo {
-    max-width: 150px; 
-    height: auto;     
-    display: block;   
-    margin: 0 auto;  
-    align-items: baseline;
-}
-
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px;
+    padding: 20px;
+    height: 70px;
+}
+
+nav .logo {
+    width: 100px;
 }
 
 nav ul {
@@ -50,132 +31,61 @@ nav ul {
 }
 
 nav ul li a {
-    color: var(--white-color);
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--hover-color);
-}
-
-.hero {
-    margin-top: 20px;
-    padding: 30px;
-    background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
-    color: var(--white-color);
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
+    font-size: 3rem;
+    margin: 10px 0;
 }
 
 .hero p {
     font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
+    color: #f0f0f0;
 }
 
 .productos {
     padding: 50px 20px;
+    background-color: #ffffff;
     text-align: center;
-    background: var(--white-color);
-    border-top: 5px solid var(--primary-color);
-}
-
-.productos h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 40px;
 }
 
 .grid {
     display: grid;
-    gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.producto {
-    background: var(--secondary-color);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.producto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    gap: 20px;
 }
 
 .producto img {
-    width: 100%;
-    max-width: 150px;
+    width: 80%;
     height: auto;
-    margin: 0 auto 15px;
-    display: block;
-}
-
-.producto h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-.producto p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-input[type="number"] {
-    padding: 10px;
-    width: 60px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
 button {
-    padding: 15px 30px;
-    background: var(--primary-color);
-    color: var(--white-color);
-    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #8cb4bf;
+    color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: var(--hover-color);
-    transform: scale(1.05);
+    background-color: #7aa7b1;
 }
 
 footer {
-    background: var(--primary-color);
-    color: var(--white-color);
-    text-align: center;
+    background-color: #8cb4bf;
+    color: white;
     padding: 20px;
-    margin-top: 30px;
+    text-align: center;
 }
 
 footer a {
-    color: aquamarine;
+    color: #bbdefb;
     text-decoration: none;
-    font-weight: bold;
-    transition: text-decoration 0.3s;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
