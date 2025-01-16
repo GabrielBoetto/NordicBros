@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // Evento para calcular el total
 document.getElementById("calcular").addEventListener("click", () => {
     let total = 0;
+    let descuento = false;
+
     productos.forEach(producto => {
         const cantidad = parseInt(document.getElementById(producto.id).value) || 0;
         total += cantidad * producto.precio;
@@ -27,9 +29,16 @@ document.getElementById("calcular").addEventListener("click", () => {
 
     if (total > 50000) {
         total *= 0.9;
+        descuento = true;
     }
 
     document.getElementById("total").textContent = `Total: $${total.toFixed(2)}`;
+
+    if (descuento) {
+        alert("¡Felicidades! Has recibido un 10% de descuento por compras superiores a $50,000.");
+    } else {
+        alert("El cálculo del total se realizó correctamente.");
+    }
 });
 
 // Evento para limpiar el carrito
@@ -39,4 +48,5 @@ document.getElementById("limpiar").addEventListener("click", () => {
         localStorage.removeItem(producto.id);
     });
     document.getElementById("total").textContent = "";
+    alert("El carrito se ha limpiado correctamente.");
 });
