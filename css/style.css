@@ -1,24 +1,16 @@
-/* Fuentes y colores */
-:root {
-    --primary-color: #8cb4bf;
-    --secondary-color: #f0f4f8;
-    --text-color: #333;
-    --white-color: #ffffff;
-    --hover-color: #72a4ae;
-}
-
+/* General */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    line-height: 1.6;
+    background-color: #f5f7fa;
+    color: #333;
 }
 
+/* Header */
 header {
-    background: var(--primary-color);
-    color: var(--white-color);
+    background-color: #8cb4bf;
+    color: white;
     padding: 20px;
     text-align: center;
     position: relative;
@@ -28,144 +20,165 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 10px 20px;
+}
+
+nav .logo {
+    width: 150px;
+    height: auto;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
-    color: var(--white-color);
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    font-size: 1rem;
 }
 
 nav ul li a:hover {
-    color: var(--hover-color);
+    text-decoration: underline;
 }
 
+/* Hero Section */
 .hero {
-    margin-top: 20px;
-    padding: 30px;
-    background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
-    color: var(--white-color);
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #8cb4bf, #6c9da8);
+    color: white;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 .hero p {
     font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
+/* Products Section */
 .productos {
-    padding: 50px 20px;
+    padding: 40px 20px;
     text-align: center;
-    background: var(--white-color);
-    border-top: 5px solid var(--primary-color);
+    background-color: #ffffff;
 }
 
 .productos h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 40px;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #555;
 }
 
 .grid {
     display: grid;
-    gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 20px;
 }
 
 .producto {
-    background: var(--secondary-color);
+    background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 20px;
-    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .producto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .producto img {
     width: 100%;
-    max-width: 150px;
     height: auto;
-    margin: 0 auto 15px;
-    display: block;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
 }
 
 .producto h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    margin: 15px 0;
+    color: #8cb4bf;
 }
 
 .producto p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
 
 input[type="number"] {
-    padding: 10px;
     width: 60px;
-    text-align: center;
+    padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 10px 0;
 }
 
+/* Buttons */
 button {
-    padding: 15px 30px;
-    background: var(--primary-color);
-    color: var(--white-color);
-    font-size: 1.2rem;
+    padding: 12px 24px;
+    background-color: #8cb4bf;
+    color: white;
+    font-size: 1rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: var(--hover-color);
-    transform: scale(1.05);
+    background-color: #6c9da8;
 }
 
+button:active {
+    background-color: #4d6f78;
+}
+
+/* Footer */
 footer {
-    background: var(--primary-color);
-    color: var(--white-color);
-    text-align: center;
+    background-color: #8cb4bf;
+    color: white;
     padding: 20px;
-    margin-top: 30px;
+    text-align: center;
 }
 
 footer a {
-    color: var(--hover-color);
+    color: #bbe4f5;
     text-decoration: none;
     font-weight: bold;
-    transition: text-decoration 0.3s;
 }
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
