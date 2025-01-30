@@ -3,7 +3,7 @@ import _ from 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/+esm';
 
 // Cargar los productos dinámicamente desde un archivo JSON
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('./productos.json')
+    fetch('../productos.json')
         .then(response => response.json())
         .then(data => {
             const productos = data;
