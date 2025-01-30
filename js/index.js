@@ -1,6 +1,4 @@
-
 import _ from 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/+esm';
-
 
 document.addEventListener("DOMContentLoaded", () => {
     fetch('../productos.json')
@@ -8,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             const productos = data;
             const productosContainer = document.querySelector(".grid");
+
+            // Guardar los productos en localStorage
+            localStorage.setItem("productos", JSON.stringify(productos));
 
             productos.forEach(producto => {
                 const productoDiv = document.createElement("div");
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
                 productosContainer.appendChild(productoDiv);
 
-
+                // Verificar si hay cantidad guardada en localStorage
                 const cantidadGuardada = JSON.parse(localStorage.getItem(producto.id));
                 if (cantidadGuardada) {
                     document.getElementById(producto.id).value = cantidadGuardada;
@@ -30,39 +31,38 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error('Error al cargar los productos:', error));
 });
 
-
 document.getElementById("calcular").addEventListener("click", () => {
     let total = 0;
     let descuento = false;
-    const carrito = [];
 
-
+    // Cargar productos del localStorage
     const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
+    // Calcular el total
     productos.forEach(producto => {
         const cantidad = parseInt(document.getElementById(producto.id).value) || 0;
         if (cantidad > 0) {
-            carrito.push({ id: producto.id, nombre: producto.nombre, precio: producto.precio, cantidad });
+            // Actualizar localStorage con la cantidad seleccionada
+            localStorage.setItem(producto.id, JSON.stringify(cantidad));
+            total += cantidad * producto.precio;
         }
-        total += cantidad * producto.precio;
-        localStorage.setItem(producto.id, JSON.stringify(cantidad));
     });
 
+    // Aplicar descuento si el total supera los 50.000
     if (total > 50000) {
         total *= 0.9;
         descuento = true;
     }
 
+    // Mostrar el total calculado
     document.getElementById("total").textContent = `Total: $${total.toFixed(2)}`;
 
-  
     const mensaje = descuento ? 
         "¡Felicidades! Has recibido un 10% de descuento por compras superiores a $50,000." : 
         "El cálculo del total se realizó correctamente.";
-    
+
     mostrarMensaje(mensaje);
 });
-
 
 function mostrarMensaje(mensaje) {
     const mensajeContainer = document.createElement("p");
@@ -71,7 +71,6 @@ function mostrarMensaje(mensaje) {
     mensajeContainer.style.color = "#4CAF50";
     document.body.appendChild(mensajeContainer);
 }
-
 
 document.getElementById("limpiar").addEventListener("click", () => {
     const productos = JSON.parse(localStorage.getItem("productos")) || [];
