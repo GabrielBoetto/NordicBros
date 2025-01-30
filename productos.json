@@ -1,0 +1,5 @@
+[
+    { "id": "producto1", "nombre": "Bidón Black", "precio": 10000, "imagen": "./media/1C.png" },
+    { "id": "producto2", "nombre": "Bidón Purple", "precio": 15000, "imagen": "./media/2C.png" },
+    { "id": "producto3", "nombre": "Bidón Neón", "precio": 20000, "imagen": "./media/3C.png" }
+]

@@ -1,30 +1,33 @@
-// Constantes de productos
-const productos = [
-    { id: "producto1", nombre: "Bidón Black", precio: 10000, imagen: "./media/1C.png" },
-    { id: "producto2", nombre: "Bidón Purple", precio: 15000, imagen: "./media/2C.png" },
-    { id: "producto3", nombre: "Bidón Neón", precio: 20000, imagen: "./media/3C.png" }
-];
+// Importar Lodash
+import _ from 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/+esm';
 
-// Cargar los productos dinámicamente en el HTML
+// Cargar los productos dinámicamente desde un archivo JSON
 document.addEventListener("DOMContentLoaded", () => {
-    const productosContainer = document.querySelector(".grid");
-    productos.forEach(producto => {
-        const productoDiv = document.createElement("div");
-        productoDiv.classList.add("producto");
-        productoDiv.innerHTML = `
-            <img src="${producto.imagen}" alt="${producto.nombre}">
-            <h3>${producto.nombre}</h3>
-            <p>Precio: $${producto.precio}</p>
-            <input type="number" id="${producto.id}" value="0" min="0">
-        `;
-        productosContainer.appendChild(productoDiv);
+    fetch('./productos.json')
+        .then(response => response.json())
+        .then(data => {
+            const productos = data;
+            const productosContainer = document.querySelector(".grid");
 
-        // Cargar datos del carrito si existen en localStorage
-        const cantidadGuardada = JSON.parse(localStorage.getItem(producto.id));
-        if (cantidadGuardada) {
-            document.getElementById(producto.id).value = cantidadGuardada;
-        }
-    });
+            productos.forEach(producto => {
+                const productoDiv = document.createElement("div");
+                productoDiv.classList.add("producto");
+                productoDiv.innerHTML = `
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                    <h3>${producto.nombre}</h3>
+                    <p>Precio: $${producto.precio}</p>
+                    <input type="number" id="${producto.id}" value="0" min="0">
+                `;
+                productosContainer.appendChild(productoDiv);
+
+                // Cargar datos del carrito si existen en localStorage
+                const cantidadGuardada = JSON.parse(localStorage.getItem(producto.id));
+                if (cantidadGuardada) {
+                    document.getElementById(producto.id).value = cantidadGuardada;
+                }
+            });
+        })
+        .catch(error => console.error('Error al cargar los productos:', error));
 });
 
 // Evento para calcular el total
@@ -32,6 +35,9 @@ document.getElementById("calcular").addEventListener("click", () => {
     let total = 0;
     let descuento = false;
     const carrito = [];
+
+    // Usando Lodash para simplificar el manejo de productos
+    const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
     productos.forEach(producto => {
         const cantidad = parseInt(document.getElementById(producto.id).value) || 0;
@@ -68,6 +74,7 @@ function mostrarMensaje(mensaje) {
 
 // Evento para limpiar el carrito
 document.getElementById("limpiar").addEventListener("click", () => {
+    const productos = JSON.parse(localStorage.getItem("productos")) || [];
     productos.forEach(producto => {
         document.getElementById(producto.id).value = 0;
         localStorage.removeItem(producto.id);
