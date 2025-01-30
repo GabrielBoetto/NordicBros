@@ -1,7 +1,7 @@
-// Importar Lodash
+
 import _ from 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/+esm';
 
-// Cargar los productos dinámicamente desde un archivo JSON
+
 document.addEventListener("DOMContentLoaded", () => {
     fetch('../productos.json')
         .then(response => response.json())
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
                 productosContainer.appendChild(productoDiv);
 
-                // Cargar datos del carrito si existen en localStorage
+
                 const cantidadGuardada = JSON.parse(localStorage.getItem(producto.id));
                 if (cantidadGuardada) {
                     document.getElementById(producto.id).value = cantidadGuardada;
@@ -30,13 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error('Error al cargar los productos:', error));
 });
 
-// Evento para calcular el total
+
 document.getElementById("calcular").addEventListener("click", () => {
     let total = 0;
     let descuento = false;
     const carrito = [];
 
-    // Usando Lodash para simplificar el manejo de productos
+
     const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
     productos.forEach(producto => {
@@ -55,7 +55,7 @@ document.getElementById("calcular").addEventListener("click", () => {
 
     document.getElementById("total").textContent = `Total: $${total.toFixed(2)}`;
 
-    // Mostrar mensaje dinámico en lugar de alert
+  
     const mensaje = descuento ? 
         "¡Felicidades! Has recibido un 10% de descuento por compras superiores a $50,000." : 
         "El cálculo del total se realizó correctamente.";
@@ -63,7 +63,7 @@ document.getElementById("calcular").addEventListener("click", () => {
     mostrarMensaje(mensaje);
 });
 
-// Mostrar mensaje dinámico
+
 function mostrarMensaje(mensaje) {
     const mensajeContainer = document.createElement("p");
     mensajeContainer.textContent = mensaje;
@@ -72,7 +72,7 @@ function mostrarMensaje(mensaje) {
     document.body.appendChild(mensajeContainer);
 }
 
-// Evento para limpiar el carrito
+
 document.getElementById("limpiar").addEventListener("click", () => {
     const productos = JSON.parse(localStorage.getItem("productos")) || [];
     productos.forEach(producto => {
